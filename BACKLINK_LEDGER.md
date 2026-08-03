@@ -5,9 +5,9 @@ Last audited: 2026-08-04
 ## Summary
 
 - Canonical target: https://nbmecalc.com
-- Completed public listings: 6
-- Unique referring root domains: 6 (`github.io`, `sonatype.com`, `codeberg.org`, `gitea.com`, `gitbook.io`, `readthedocs.io`)
-- Pending / prepared: 9 platform surfaces
+- Completed public listings: 7
+- Unique referring root domains: 7 (`github.io`, `sonatype.com`, `codeberg.org`, `gitea.com`, `gitbook.io`, `readthedocs.io`, `docs.rs`)
+- Pending / prepared: 8 platform surfaces
 - Blocked: none
 - Rejected after qualification: 11 platforms
 
@@ -30,7 +30,7 @@ Last audited: 2026-08-04
 | GitBook | gitbook.io | https://savepinner.gitbook.io/nbmecalc-developer-documentation | Developer guide | Documentation prose | none | HTTP 200; `index, follow`; canonical present | Complete | Exact target anchor verified 2026-08-03 |
 | DEV Community | dev.to | https://dev.to/jiankn/building-an-uncertainty-aware-practice-exam-score-calculator-in-java-15og | Technical tutorial | Article prose | `noopener noreferrer` | HTTP 200; `noindex, nofollow`; self-canonical | Published / indexing pending | Exact target anchor is followable, but the page currently fails the indexability gate. DEV API reported 0 reactions; re-audit after platform scoring or moderation. |
 | pkg.go.dev | pkg.go.dev | https://pkg.go.dev/github.com/jiankn/nbmecalc-go | Go library | Package documentation | pending final audit | HTTP 200; no `noindex`; canonical present | Published / propagating | v1.0.2 adds the exact project URL to the Go package documentation; CI passed and proxy.golang.org serves the tag, while pkg.go.dev propagation is pending |
-| docs.rs | docs.rs | Propagating | Rust library documentation | Homepage metadata | pending final audit | HTTP 200; no `noindex` on representative latest URL | Published / propagating | crates.io API confirms `nbmecalc` v1.0.1 is public and not yanked; docs.rs had not created the public page immediately after publication |
+| docs.rs | docs.rs | https://docs.rs/nbmecalc/latest/nbmecalc/ | Rust library documentation | Homepage metadata and crate documentation | none | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | crates.io v1.0.1 is public and not yanked; two exact followable target anchors verified 2026-08-04 |
 | Clojars | clojars.org | Not published | Clojure library | Project URL | none on representative page | HTTP 200; no `noindex`; no `X-Robots-Tag` | Qualified / secrets pending | `net.clojars.jiankn/nbmecalc` v1.0.0 passed CI; needs `CLOJARS_USERNAME` and `CLOJARS_TOKEN` |
 | Hackage | hackage.haskell.org | Not published | Haskell library | Homepage metadata | none on representative page | HTTP 200; no `noindex`; canonical present | Qualified / secret pending | `nbmecalc` 1.0.0.0 passed CI; needs `HACKAGE_TOKEN` |
 | CocoaPods | cocoapods.org | Not published | Swift library | Homepage metadata | none on representative page | HTTP 200; no `noindex`; no `X-Robots-Tag` | Qualified / secret pending | `NBMEcalc` 1.0.0 passed Swift tests and pod lint; needs `COCOAPODS_TRUNK_TOKEN` |
