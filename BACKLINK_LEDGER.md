@@ -7,8 +7,8 @@ Last audited: 2026-08-04
 - Canonical target: https://nbmecalc.com
 - Completed public listings: 8
 - Unique referring root domains: 8 (`github.io`, `sonatype.com`, `codeberg.org`, `gitea.com`, `gitbook.io`, `readthedocs.io`, `docs.rs`, `clojars.org`)
-- Pending / prepared: 7 platform surfaces
-- Blocked: none
+- Pending / prepared: 6 platform surfaces
+- Blocked: 1 platform (`hackage.haskell.org`)
 - Rejected after qualification: 11 platforms
 
 ## Platforms
@@ -32,7 +32,7 @@ Last audited: 2026-08-04
 | pkg.go.dev | pkg.go.dev | https://pkg.go.dev/github.com/jiankn/nbmecalc-go | Go library | Package documentation | pending final audit | HTTP 200; no `noindex`; canonical present | Published / propagating | v1.0.2 adds the exact project URL to the Go package documentation; CI passed and proxy.golang.org serves the tag, while pkg.go.dev propagation is pending |
 | docs.rs | docs.rs | https://docs.rs/nbmecalc/latest/nbmecalc/ | Rust library documentation | Homepage metadata and crate documentation | none | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | crates.io v1.0.1 is public and not yanked; two exact followable target anchors verified 2026-08-04 |
 | Clojars | clojars.org | https://clojars.org/net.clojars.jiankn/nbmecalc | Clojure library | Project URL | none | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | Clojars API confirms v1.0.2; exact target anchor verified 2026-08-04 |
-| Hackage | hackage.haskell.org | Not published | Haskell library | Homepage metadata | none on representative page | HTTP 200; no `noindex`; canonical present | Qualified / secret pending | `nbmecalc` 1.0.0.0 passed CI; needs `HACKAGE_TOKEN` |
+| Hackage | hackage.haskell.org | Not published | Haskell library | Homepage metadata | none on representative page | HTTP 200; no `noindex`; canonical present | Blocked / uploader approval | v1.0.1.1 passed build, test, `cabal check`, and `sdist`; upload reached Hackage but returned HTTP 403 because account is not in the Uploaders group. Requires Hackage trustee approval. |
 | CocoaPods | cocoapods.org | Not published | Swift library | Homepage metadata | none on representative page | HTTP 200; no `noindex`; no `X-Robots-Tag` | Qualified / secret pending | `NBMEcalc` 1.0.0 passed Swift tests and pod lint; needs `COCOAPODS_TRUNK_TOKEN` |
 | DUB | code.dlang.org | Not registered | D library | Homepage and README | none on representative page | HTTP 200; no `noindex`; no `X-Robots-Tag` | Qualified / registration pending | `jiankn/nbmecalc-dlang` v1.0.0 passed CI and is public |
 | Haxelib | lib.haxe.org | Not published | Haxe library | Project URL and README | none on representative page | HTTP 200; no `noindex`; no `X-Robots-Tag` | Qualified / upload pending | `jiankn/nbmecalc-haxe` v1.0.0 passed CI; release ZIP is attached to the GitHub release |
