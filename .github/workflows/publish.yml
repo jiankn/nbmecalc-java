@@ -1,0 +1,41 @@
+name: Publish to Maven Central
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        description: Type publish-1.0.0 to release the immutable Maven version
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    if: ${{ inputs.confirmation == 'publish-1.0.0' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+          server-id: central
+          server-username: CENTRAL_USERNAME
+          server-password: CENTRAL_PASSWORD
+          gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+          gpg-passphrase: MAVEN_GPG_PASSPHRASE
+      - name: Verify immutable release metadata
+        shell: bash
+        run: |
+          test "$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" = "1.0.0"
+          test "$(git rev-parse HEAD)" = "$(git rev-list -n 1 v1.0.0)"
+      - name: Test, sign, and publish
+        run: mvn --batch-mode --no-transfer-progress clean deploy -Prelease
+        env:
+          CENTRAL_USERNAME: ${{ secrets.CENTRAL_USERNAME }}
+          CENTRAL_PASSWORD: ${{ secrets.CENTRAL_PASSWORD }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
+
