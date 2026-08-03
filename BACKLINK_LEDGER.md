@@ -5,9 +5,9 @@ Last audited: 2026-08-04
 ## Summary
 
 - Canonical target: https://nbmecalc.com
-- Completed public listings: 7
-- Unique referring root domains: 7 (`github.io`, `sonatype.com`, `codeberg.org`, `gitea.com`, `gitbook.io`, `readthedocs.io`, `docs.rs`)
-- Pending / prepared: 8 platform surfaces
+- Completed public listings: 8
+- Unique referring root domains: 8 (`github.io`, `sonatype.com`, `codeberg.org`, `gitea.com`, `gitbook.io`, `readthedocs.io`, `docs.rs`, `clojars.org`)
+- Pending / prepared: 7 platform surfaces
 - Blocked: none
 - Rejected after qualification: 11 platforms
 
@@ -31,7 +31,7 @@ Last audited: 2026-08-04
 | DEV Community | dev.to | https://dev.to/jiankn/building-an-uncertainty-aware-practice-exam-score-calculator-in-java-15og | Technical tutorial | Article prose | `noopener noreferrer` | HTTP 200; `noindex, nofollow`; self-canonical | Published / indexing pending | Exact target anchor is followable, but the page currently fails the indexability gate. DEV API reported 0 reactions; re-audit after platform scoring or moderation. |
 | pkg.go.dev | pkg.go.dev | https://pkg.go.dev/github.com/jiankn/nbmecalc-go | Go library | Package documentation | pending final audit | HTTP 200; no `noindex`; canonical present | Published / propagating | v1.0.2 adds the exact project URL to the Go package documentation; CI passed and proxy.golang.org serves the tag, while pkg.go.dev propagation is pending |
 | docs.rs | docs.rs | https://docs.rs/nbmecalc/latest/nbmecalc/ | Rust library documentation | Homepage metadata and crate documentation | none | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | crates.io v1.0.1 is public and not yanked; two exact followable target anchors verified 2026-08-04 |
-| Clojars | clojars.org | Not published | Clojure library | Project URL | none on representative page | HTTP 200; no `noindex`; no `X-Robots-Tag` | Qualified / secrets pending | `net.clojars.jiankn/nbmecalc` v1.0.0 passed CI; needs `CLOJARS_USERNAME` and `CLOJARS_TOKEN` |
+| Clojars | clojars.org | https://clojars.org/net.clojars.jiankn/nbmecalc | Clojure library | Project URL | none | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | Clojars API confirms v1.0.2; exact target anchor verified 2026-08-04 |
 | Hackage | hackage.haskell.org | Not published | Haskell library | Homepage metadata | none on representative page | HTTP 200; no `noindex`; canonical present | Qualified / secret pending | `nbmecalc` 1.0.0.0 passed CI; needs `HACKAGE_TOKEN` |
 | CocoaPods | cocoapods.org | Not published | Swift library | Homepage metadata | none on representative page | HTTP 200; no `noindex`; no `X-Robots-Tag` | Qualified / secret pending | `NBMEcalc` 1.0.0 passed Swift tests and pod lint; needs `COCOAPODS_TRUNK_TOKEN` |
 | DUB | code.dlang.org | Not registered | D library | Homepage and README | none on representative page | HTTP 200; no `noindex`; no `X-Robots-Tag` | Qualified / registration pending | `jiankn/nbmecalc-dlang` v1.0.0 passed CI and is public |
