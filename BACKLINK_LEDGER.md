@@ -1,13 +1,13 @@
 # NBMEcalc developer backlink ledger
 
-Last audited: 2026-08-03
+Last audited: 2026-08-04
 
 ## Summary
 
 - Canonical target: https://nbmecalc.com
-- Completed public listings: 5
-- Unique referring root domains: 5 (`github.io`, `sonatype.com`, `codeberg.org`, `gitea.com`, `gitbook.io`)
-- Pending / prepared: 10 platform surfaces
+- Completed public listings: 6
+- Unique referring root domains: 6 (`github.io`, `sonatype.com`, `codeberg.org`, `gitea.com`, `gitbook.io`, `readthedocs.io`)
+- Pending / prepared: 9 platform surfaces
 - Blocked: none
 - Rejected after qualification: 11 platforms
 
@@ -17,7 +17,7 @@ Last audited: 2026-08-03
 |---|---|---|---|---|---|---|---|---|
 | GitHub Pages | github.io | https://jiankn.github.io/nbmecalc-java/ | Java API documentation | Javadoc overview | none | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | Exact target anchor verified 2026-08-03 |
 | Maven Central | sonatype.com | https://central.sonatype.com/artifact/io.github.jiankn/nbmecalc-core/1.0.0 | Java library | POM Project URL | `noreferrer` | HTTP 200; canonical present; no `noindex`; no `X-Robots-Tag` | Complete | POM, main JAR, sources JAR, and Javadoc JAR returned HTTP 200; exact target anchor verified 2026-08-03. Central search API indexing is still propagating. |
-| Read the Docs | readthedocs.io | Not created | API documentation | Documentation prose | none on representative page | HTTP 200; no `noindex`; no `X-Robots-Tag` | Qualified / deferred | Extra account and duplicate documentation maintenance; revisit after Maven Central release |
+| Read the Docs | readthedocs.io | https://nbmecalc-developer-docs.readthedocs.io/ | Developer documentation | Documentation prose | none | HTTP 200; no `noindex`; no `X-Robots-Tag`; canonical present | Complete | Build 33891402 succeeded from commit `a154bcd`; exact target anchor and public sitemap verified 2026-08-04 |
 | CocoaPods | cocoapods.org | Not created | Swift library | Documentation metadata | none on representative page | HTTP 200; no `noindex`; no `X-Robots-Tag` | Qualified / deferred | Requires a maintained Swift implementation and macOS release path |
 | JSR | jsr.io | Not created | TypeScript package | Rendered README product link | `nofollow` | HTTP 200; no `noindex`; no `X-Robots-Tag` | Rejected | Product-site link failed followability gate; verified repository link behavior does not help the canonical target |
 | NuGet | nuget.org | Not created | .NET package | Homepage / documentation | `nofollow noopener noreferrer` | HTTP 200; no `noindex`; no `X-Robots-Tag` | Rejected | Failed followability gate |
@@ -29,7 +29,6 @@ Last audited: 2026-08-03
 | Gitea.com | gitea.com | https://gitea.com/jiankn/nbmecalc-java | Java library mirror | Repository Website field | none | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | Exact target anchor verified 2026-08-03; a separate README link is `nofollow`, while the repository Website link is followable |
 | GitBook | gitbook.io | https://savepinner.gitbook.io/nbmecalc-developer-documentation | Developer guide | Documentation prose | none | HTTP 200; `index, follow`; canonical present | Complete | Exact target anchor verified 2026-08-03 |
 | DEV Community | dev.to | https://dev.to/jiankn/building-an-uncertainty-aware-practice-exam-score-calculator-in-java-15og | Technical tutorial | Article prose | `noopener noreferrer` | HTTP 200; `noindex, nofollow`; self-canonical | Published / indexing pending | Exact target anchor is followable, but the page currently fails the indexability gate. DEV API reported 0 reactions; re-audit after platform scoring or moderation. |
-| Read the Docs | readthedocs.io | Not created | Developer documentation | Documentation prose | none on representative page | HTTP 200; no `noindex`; no `X-Robots-Tag` | Qualified / import pending | MkDocs strict build and GitHub CI passed; repository import remains |
 | pkg.go.dev | pkg.go.dev | Propagating | Go library | Rendered README and repository metadata | one nofollow prose link plus one ordinary URL on representative page | HTTP 200; no `noindex`; canonical present on representative page | Published / propagating | `github.com/jiankn/nbmecalc-go` v1.0.0 is public and available from proxy.golang.org; pkg.go.dev page still returned 404 immediately after release |
 | docs.rs | docs.rs | Not published | Rust library documentation | Homepage metadata | none on representative latest-version page | HTTP 200; no `noindex` on representative latest URL | Qualified / secret pending | `jiankn/nbmecalc-rust` v1.0.0 passed CI; crates.io publication requires repository secret `CARGO_REGISTRY_TOKEN` |
 | Clojars | clojars.org | Not published | Clojure library | Project URL | none on representative page | HTTP 200; no `noindex`; no `X-Robots-Tag` | Qualified / secrets pending | `net.clojars.jiankn/nbmecalc` v1.0.0 passed CI; needs `CLOJARS_USERNAME` and `CLOJARS_TOKEN` |
