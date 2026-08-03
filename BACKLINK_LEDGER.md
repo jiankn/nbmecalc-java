@@ -5,10 +5,10 @@ Last audited: 2026-08-03
 ## Summary
 
 - Canonical target: https://nbmecalc.com
-- Completed public listings: 1
-- Unique referring root domains: 1 (`github.io`)
-- Pending: Maven Central package page
-- Blocked: Maven Central account namespace, token, and signing secrets
+- Completed public listings: 2
+- Unique referring root domains: 2 (`github.io`, `sonatype.com`)
+- Pending: none
+- Blocked: none
 - Rejected after qualification: 6 platforms
 
 ## Platforms
@@ -16,7 +16,7 @@ Last audited: 2026-08-03
 | Platform | Root domain | Public URL | Asset type | Link location | rel tokens | Index directives | Status | Evidence / next action |
 |---|---|---|---|---|---|---|---|---|
 | GitHub Pages | github.io | https://jiankn.github.io/nbmecalc-java/ | Java API documentation | Javadoc overview | none | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | Exact target anchor verified 2026-08-03 |
-| Maven Central | sonatype.com | Pending | Java library | POM Project URL | expected `noreferrer` | Representative page HTTP 200; no `noindex`; no `X-Robots-Tag` | Pending | `io.github.jiankn:nbmecalc-core:1.0.0` is available; publish after account and secret setup, then audit final page |
+| Maven Central | sonatype.com | https://central.sonatype.com/artifact/io.github.jiankn/nbmecalc-core/1.0.0 | Java library | POM Project URL | `noreferrer` | HTTP 200; canonical present; no `noindex`; no `X-Robots-Tag` | Complete | POM, main JAR, sources JAR, and Javadoc JAR returned HTTP 200; exact target anchor verified 2026-08-03. Central search API indexing is still propagating. |
 | Read the Docs | readthedocs.io | Not created | API documentation | Documentation prose | none on representative page | HTTP 200; no `noindex`; no `X-Robots-Tag` | Qualified / deferred | Extra account and duplicate documentation maintenance; revisit after Maven Central release |
 | CocoaPods | cocoapods.org | Not created | Swift library | Documentation metadata | none on representative page | HTTP 200; no `noindex`; no `X-Robots-Tag` | Qualified / deferred | Requires a maintained Swift implementation and macOS release path |
 | JSR | jsr.io | Not created | TypeScript package | Rendered README product link | `nofollow` | HTTP 200; no `noindex`; no `X-Robots-Tag` | Rejected | Product-site link failed followability gate; verified repository link behavior does not help the canonical target |
