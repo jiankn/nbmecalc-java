@@ -37,7 +37,11 @@ jobs:
           printf '%s\n' "$MAVEN_GPG_PRIVATE_KEY" > "$key_file"
           grep -q '^-----BEGIN PGP PRIVATE KEY BLOCK-----$' "$key_file"
           grep -q '^-----END PGP PRIVATE KEY BLOCK-----$' "$key_file"
-          gpg --batch --import "$key_file"
+          # GitHub's multiline-secret normalization can remove the optional
+          # blank armor-header separator. GnuPG still imports the complete
+          # key but returns 2 for that warning, so the fingerprint below is
+          # the authoritative success check.
+          gpg --batch --import "$key_file" || true
           rm -f "$key_file"
           fingerprint="$(gpg --batch --with-colons --list-secret-keys | awk -F: '$1 == "fpr" { print $10; exit }')"
           test "$fingerprint" = "5364CE815425A4564EF538120844F858E75D0853"
