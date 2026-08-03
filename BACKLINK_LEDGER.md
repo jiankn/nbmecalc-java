@@ -5,9 +5,9 @@ Last audited: 2026-08-03
 ## Summary
 
 - Canonical target: https://nbmecalc.com
-- Completed public listings: 3
-- Unique referring root domains: 3 (`github.io`, `sonatype.com`, `codeberg.org`)
-- Pending / prepared: 12 platform surfaces
+- Completed public listings: 4
+- Unique referring root domains: 4 (`github.io`, `sonatype.com`, `codeberg.org`, `gitea.com`)
+- Pending / prepared: 11 platform surfaces
 - Blocked: none
 - Rejected after qualification: 11 platforms
 
@@ -26,7 +26,7 @@ Last audited: 2026-08-03
 | VS Marketplace | marketplace.visualstudio.com | Not created | VS Code extension | README / repository links | `nofollow noopener noreferrer` | HTTP 200; no `noindex`; no `X-Robots-Tag` | Rejected | Failed followability gate |
 | Libraries.io | libraries.io | Not created | Registry mirror | Homepage / README | `nofollow` | HTTP 200; no `noindex`; no `X-Robots-Tag` | Rejected | Failed followability gate |
 | Codeberg | codeberg.org | https://codeberg.org/jiankn/nbmecalc-java | Java library mirror | Repository Website field | none | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | Exact target anchor verified 2026-08-03; a separate README link is `nofollow`, while the repository Website link is followable |
-| Gitea.com | gitea.com | Not created | Java library mirror | Repository Website field | none on representative page | HTTP 200; no `noindex`; no `X-Robots-Tag` | Qualified / UI pending | Account is logged in; repository-creation UI timed out twice without creating a repository |
+| Gitea.com | gitea.com | https://gitea.com/jiankn/nbmecalc-java | Java library mirror | Repository Website field | none | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | Exact target anchor verified 2026-08-03; a separate README link is `nofollow`, while the repository Website link is followable |
 | GitBook | gitbook.io | Not created | Developer guide | Documentation prose | none on representative page | HTTP 200; `index, follow`; canonical present | Qualified / import pending | `jiankn/nbmecalc-developer-docs` built and public; GitBook import remains |
 | DEV Community | dev.to | Not created | Technical tutorial | Article prose | `noopener noreferrer` | HTTP 200; no blocking robots; canonical present | Qualified / publish pending | Article draft is in `nbmecalc-developer-docs/docs/dev-article.md`; DEV account is logged in |
 | Read the Docs | readthedocs.io | Not created | Developer documentation | Documentation prose | none on representative page | HTTP 200; no `noindex`; no `X-Robots-Tag` | Qualified / import pending | MkDocs strict build and GitHub CI passed; repository import remains |
