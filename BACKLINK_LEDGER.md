@@ -5,9 +5,9 @@ Last audited: 2026-08-04
 ## Summary
 
 - Canonical target: https://nbmecalc.com
-- Completed public listings: 12
-- Unique referring root domains: 12 (`github.io`, `sonatype.com`, `codeberg.org`, `gitea.com`, `gitbook.io`, `readthedocs.io`, `docs.rs`, `clojars.org`, `cocoapods.org`, `code.dlang.org`, `smithery.ai`, `pkg.go.dev`)
-- Pending / prepared: 1 platform surface
+- Completed public listings: 13
+- Unique referring root domains: 13 (`github.io`, `sonatype.com`, `codeberg.org`, `gitea.com`, `gitbook.io`, `readthedocs.io`, `docs.rs`, `clojars.org`, `cocoapods.org`, `code.dlang.org`, `smithery.ai`, `pkg.go.dev`, `dev.to`)
+- Pending / prepared: 0 platform surfaces
 - Blocked: 1 platform (`hackage.haskell.org`)
 - Skipped by owner: 1 platform (`lib.haxe.org`)
 - Rejected after qualification: 11 platforms
@@ -29,7 +29,7 @@ Last audited: 2026-08-04
 | Codeberg | codeberg.org | https://codeberg.org/jiankn/nbmecalc-java | Java library mirror | Repository Website field | none | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | Exact target anchor verified 2026-08-03; a separate README link is `nofollow`, while the repository Website link is followable |
 | Gitea.com | gitea.com | https://gitea.com/jiankn/nbmecalc-java | Java library mirror | Repository Website field | none | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | Exact target anchor verified 2026-08-03; a separate README link is `nofollow`, while the repository Website link is followable |
 | GitBook | gitbook.io | https://savepinner.gitbook.io/nbmecalc-developer-documentation | Developer guide | Documentation prose | none | HTTP 200; `index, follow`; canonical present | Complete | Exact target anchor verified 2026-08-03 |
-| DEV Community | dev.to | https://dev.to/jiankn/building-an-uncertainty-aware-practice-exam-score-calculator-in-java-15og | Technical tutorial | Article prose | `noopener noreferrer` | HTTP 200; `noindex, nofollow`; self-canonical | Published / indexing pending | Exact target anchor is followable, but the page currently fails the indexability gate. DEV API reported 0 reactions; re-audit after platform scoring or moderation. |
+| DEV Community | dev.to | https://dev.to/jiankn/building-an-uncertainty-aware-practice-exam-score-calculator-in-java-15og | Technical tutorial | Article prose | `noopener noreferrer` | HTTP 200; no `noindex`; self-canonical | Complete | DEV removed the earlier `noindex`; two exact followable target anchors verified 2026-08-04 |
 | pkg.go.dev | pkg.go.dev | https://pkg.go.dev/github.com/jiankn/nbmecalc-go | Go library | Package documentation | none on the explicit project-documentation link | HTTP 200; no `noindex`; canonical present | Complete | v1.0.2 is public; its README target is `nofollow`, while the exact project-documentation target anchor is followable and was verified 2026-08-04 |
 | docs.rs | docs.rs | https://docs.rs/nbmecalc/latest/nbmecalc/ | Rust library documentation | Homepage metadata and crate documentation | none | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | crates.io v1.0.1 is public and not yanked; two exact followable target anchors verified 2026-08-04 |
 | Clojars | clojars.org | https://clojars.org/net.clojars.jiankn/nbmecalc | Clojure library | Project URL | none | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | Clojars API confirms v1.0.2; exact target anchor verified 2026-08-04 |
