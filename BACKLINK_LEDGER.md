@@ -5,9 +5,9 @@ Last audited: 2026-08-04
 ## Summary
 
 - Canonical target: https://nbmecalc.com
-- Completed public listings: 9
-- Unique referring root domains: 9 (`github.io`, `sonatype.com`, `codeberg.org`, `gitea.com`, `gitbook.io`, `readthedocs.io`, `docs.rs`, `clojars.org`, `cocoapods.org`)
-- Pending / prepared: 5 platform surfaces
+- Completed public listings: 10
+- Unique referring root domains: 10 (`github.io`, `sonatype.com`, `codeberg.org`, `gitea.com`, `gitbook.io`, `readthedocs.io`, `docs.rs`, `clojars.org`, `cocoapods.org`, `code.dlang.org`)
+- Pending / prepared: 4 platform surfaces
 - Blocked: 1 platform (`hackage.haskell.org`)
 - Rejected after qualification: 11 platforms
 
@@ -33,7 +33,7 @@ Last audited: 2026-08-04
 | docs.rs | docs.rs | https://docs.rs/nbmecalc/latest/nbmecalc/ | Rust library documentation | Homepage metadata and crate documentation | none | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | crates.io v1.0.1 is public and not yanked; two exact followable target anchors verified 2026-08-04 |
 | Clojars | clojars.org | https://clojars.org/net.clojars.jiankn/nbmecalc | Clojure library | Project URL | none | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | Clojars API confirms v1.0.2; exact target anchor verified 2026-08-04 |
 | Hackage | hackage.haskell.org | Not published | Haskell library | Homepage metadata | none on representative page | HTTP 200; no `noindex`; canonical present | Blocked / uploader approval | v1.0.1.1 passed build, test, `cabal check`, and `sdist`; upload reached Hackage but returned HTTP 403 because account is not in the Uploaders group. Requires Hackage trustee approval. |
-| DUB | code.dlang.org | Not registered | D library | Homepage and README | none on representative page | HTTP 200; no `noindex`; no `X-Robots-Tag` | Qualified / registration pending | `jiankn/nbmecalc-dlang` v1.0.0 passed CI and is public |
+| DUB | code.dlang.org | https://code.dlang.org/packages/nbmecalc | D library | Homepage and README | none | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | DUB serves v1.0.1; two exact followable target anchors verified 2026-08-04 |
 | Haxelib | lib.haxe.org | Not published | Haxe library | Project URL and README | none on representative page | HTTP 200; no `noindex`; no `X-Robots-Tag` | Qualified / upload pending | `jiankn/nbmecalc-haxe` v1.0.0 passed CI; release ZIP is attached to the GitHub release |
 | Smithery | smithery.ai | Not listed | Remote MCP server | Repository / homepage link | `noopener noreferrer` on representative page | HTTP 200; no `noindex` on a valid representative listing | Qualified / listing pending | Remote Streamable HTTP MCP deployed at `https://nbmecalc-mcp.chenxuanshimo.workers.dev/mcp`; production health and initialization passed from GitHub-hosted verification |
 | PyPI | pypi.org | Not created | Python package | Homepage / rendered README | `nofollow` | HTTP 200; no `noindex`; canonical present | Rejected | Failed followability gate after rendered-DOM audit |
