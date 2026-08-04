@@ -5,9 +5,9 @@ Last audited: 2026-08-04
 ## Summary
 
 - Canonical target: https://nbmecalc.com
-- Completed public listings: 8
-- Unique referring root domains: 8 (`github.io`, `sonatype.com`, `codeberg.org`, `gitea.com`, `gitbook.io`, `readthedocs.io`, `docs.rs`, `clojars.org`)
-- Pending / prepared: 6 platform surfaces
+- Completed public listings: 9
+- Unique referring root domains: 9 (`github.io`, `sonatype.com`, `codeberg.org`, `gitea.com`, `gitbook.io`, `readthedocs.io`, `docs.rs`, `clojars.org`, `cocoapods.org`)
+- Pending / prepared: 5 platform surfaces
 - Blocked: 1 platform (`hackage.haskell.org`)
 - Rejected after qualification: 11 platforms
 
@@ -18,7 +18,7 @@ Last audited: 2026-08-04
 | GitHub Pages | github.io | https://jiankn.github.io/nbmecalc-java/ | Java API documentation | Javadoc overview | none | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | Exact target anchor verified 2026-08-03 |
 | Maven Central | sonatype.com | https://central.sonatype.com/artifact/io.github.jiankn/nbmecalc-core/1.0.0 | Java library | POM Project URL | `noreferrer` | HTTP 200; canonical present; no `noindex`; no `X-Robots-Tag` | Complete | POM, main JAR, sources JAR, and Javadoc JAR returned HTTP 200; exact target anchor verified 2026-08-03. Central search API indexing is still propagating. |
 | Read the Docs | readthedocs.io | https://nbmecalc-developer-docs.readthedocs.io/ | Developer documentation | Documentation prose | none | HTTP 200; no `noindex`; no `X-Robots-Tag`; canonical present | Complete | Build 33891402 succeeded from commit `a154bcd`; exact target anchor and public sitemap verified 2026-08-04 |
-| CocoaPods | cocoapods.org | Not created | Swift library | Documentation metadata | none on representative page | HTTP 200; no `noindex`; no `X-Robots-Tag` | Qualified / deferred | Requires a maintained Swift implementation and macOS release path |
+| CocoaPods | cocoapods.org | https://cocoapods.org/pods/NBMEcalc | Swift library | Homepage metadata | none | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | `NBMEcalc` 1.0.4 published; exact followable Homepage target anchor verified 2026-08-04. A separate rendered README link is `nofollow` and is not counted. |
 | JSR | jsr.io | Not created | TypeScript package | Rendered README product link | `nofollow` | HTTP 200; no `noindex`; no `X-Robots-Tag` | Rejected | Product-site link failed followability gate; verified repository link behavior does not help the canonical target |
 | NuGet | nuget.org | Not created | .NET package | Homepage / documentation | `nofollow noopener noreferrer` | HTTP 200; no `noindex`; no `X-Robots-Tag` | Rejected | Failed followability gate |
 | Packagist | packagist.org | Not created | PHP package | Homepage / README | `external nofollow noindex noopener ugc` | HTTP 200; no `noindex`; no `X-Robots-Tag` | Rejected | Failed followability gate |
@@ -33,7 +33,6 @@ Last audited: 2026-08-04
 | docs.rs | docs.rs | https://docs.rs/nbmecalc/latest/nbmecalc/ | Rust library documentation | Homepage metadata and crate documentation | none | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | crates.io v1.0.1 is public and not yanked; two exact followable target anchors verified 2026-08-04 |
 | Clojars | clojars.org | https://clojars.org/net.clojars.jiankn/nbmecalc | Clojure library | Project URL | none | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | Clojars API confirms v1.0.2; exact target anchor verified 2026-08-04 |
 | Hackage | hackage.haskell.org | Not published | Haskell library | Homepage metadata | none on representative page | HTTP 200; no `noindex`; canonical present | Blocked / uploader approval | v1.0.1.1 passed build, test, `cabal check`, and `sdist`; upload reached Hackage but returned HTTP 403 because account is not in the Uploaders group. Requires Hackage trustee approval. |
-| CocoaPods | cocoapods.org | Not published | Swift library | Homepage metadata | none on representative page | HTTP 200; no `noindex`; no `X-Robots-Tag` | Qualified / secret pending | `NBMEcalc` 1.0.0 passed Swift tests and pod lint; needs `COCOAPODS_TRUNK_TOKEN` |
 | DUB | code.dlang.org | Not registered | D library | Homepage and README | none on representative page | HTTP 200; no `noindex`; no `X-Robots-Tag` | Qualified / registration pending | `jiankn/nbmecalc-dlang` v1.0.0 passed CI and is public |
 | Haxelib | lib.haxe.org | Not published | Haxe library | Project URL and README | none on representative page | HTTP 200; no `noindex`; no `X-Robots-Tag` | Qualified / upload pending | `jiankn/nbmecalc-haxe` v1.0.0 passed CI; release ZIP is attached to the GitHub release |
 | Smithery | smithery.ai | Not listed | Remote MCP server | Repository / homepage link | `noopener noreferrer` on representative page | HTTP 200; no `noindex` on a valid representative listing | Qualified / listing pending | Remote Streamable HTTP MCP deployed at `https://nbmecalc-mcp.chenxuanshimo.workers.dev/mcp`; production health and initialization passed from GitHub-hosted verification |
