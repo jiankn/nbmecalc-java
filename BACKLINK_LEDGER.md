@@ -7,8 +7,9 @@ Last audited: 2026-08-04
 - Canonical target: https://nbmecalc.com
 - Completed public listings: 10
 - Unique referring root domains: 10 (`github.io`, `sonatype.com`, `codeberg.org`, `gitea.com`, `gitbook.io`, `readthedocs.io`, `docs.rs`, `clojars.org`, `cocoapods.org`, `code.dlang.org`)
-- Pending / prepared: 4 platform surfaces
+- Pending / prepared: 3 platform surfaces
 - Blocked: 1 platform (`hackage.haskell.org`)
+- Skipped by owner: 1 platform (`lib.haxe.org`)
 - Rejected after qualification: 11 platforms
 
 ## Platforms
@@ -34,7 +35,7 @@ Last audited: 2026-08-04
 | Clojars | clojars.org | https://clojars.org/net.clojars.jiankn/nbmecalc | Clojure library | Project URL | none | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | Clojars API confirms v1.0.2; exact target anchor verified 2026-08-04 |
 | Hackage | hackage.haskell.org | Not published | Haskell library | Homepage metadata | none on representative page | HTTP 200; no `noindex`; canonical present | Blocked / uploader approval | v1.0.1.1 passed build, test, `cabal check`, and `sdist`; upload reached Hackage but returned HTTP 403 because account is not in the Uploaders group. Requires Hackage trustee approval. |
 | DUB | code.dlang.org | https://code.dlang.org/packages/nbmecalc | D library | Homepage and README | none | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | DUB serves v1.0.1; two exact followable target anchors verified 2026-08-04 |
-| Haxelib | lib.haxe.org | Not published | Haxe library | Project URL and README | none on representative page | HTTP 200; no `noindex`; no `X-Robots-Tag` | Qualified / upload pending | `jiankn/nbmecalc-haxe` v1.0.0 passed CI; release ZIP is attached to the GitHub release |
+| Haxelib | lib.haxe.org | Not published | Haxe library | Project URL and README | none on representative page | HTTP 200; no `noindex`; no `X-Robots-Tag` | Skipped / credential unavailable | `jiankn` account exists but its password is unavailable; owner chose not to pursue the manual maintainer-assisted reset. Prepared v1.0.1 release and workflow are retained. |
 | Smithery | smithery.ai | Not listed | Remote MCP server | Repository / homepage link | `noopener noreferrer` on representative page | HTTP 200; no `noindex` on a valid representative listing | Qualified / listing pending | Remote Streamable HTTP MCP deployed at `https://nbmecalc-mcp.chenxuanshimo.workers.dev/mcp`; production health and initialization passed from GitHub-hosted verification |
 | PyPI | pypi.org | Not created | Python package | Homepage / rendered README | `nofollow` | HTTP 200; no `noindex`; canonical present | Rejected | Failed followability gate after rendered-DOM audit |
 | cljdoc | cljdoc.org | Not created | Clojure documentation | Rendered README | `nofollow` | HTTP 200; no `noindex` | Rejected | Failed followability gate; Clojars itself remains qualified |
