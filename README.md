@@ -2,7 +2,7 @@
 
 A dependency-free Java 17 library that converts supported practice-exam inputs to an educational Step-score estimate and combines multiple inputs with an uncertainty interval.
 
-The implementation is the reusable baseline calculation core from [NBMEcalc](https://nbmecalc.com). It runs entirely offline and performs no tracking or network requests.
+The implementation is the reusable baseline behind the [free NBME score calculator](https://nbmecalc.com/), where NBME, UWSA, Free 120, AMBOSS, and CMS inputs can be combined into an independent planning estimate with a confidence interval. The library runs entirely offline and performs no tracking or network requests.
 
 > This package is an independent educational planning tool. Its mappings are model assumptions, not official NBME, FSMB, USMLE, UWorld, AMBOSS, or CMS conversions. Do not use it for clinical decisions or as a guarantee of an examination result.
 
@@ -66,4 +66,3 @@ The test suite checks anchor interpolation, source adjustments, form bias, uncer
 ## License
 
 Apache-2.0. The NBMEcalc name and product branding are not granted for unrelated products by the software license.
-
