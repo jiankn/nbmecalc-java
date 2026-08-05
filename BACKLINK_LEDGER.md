@@ -1,17 +1,17 @@
 # NBMEcalc developer backlink ledger
 
-Last audited: 2026-08-04
+Last audited: 2026-08-05
 
 ## Summary
 
 - Canonical target: https://nbmecalc.com
-- Completed public listings: 13
-- Unique referring root domains: 13 (`github.io`, `sonatype.com`, `codeberg.org`, `gitea.com`, `gitbook.io`, `readthedocs.io`, `docs.rs`, `clojars.org`, `cocoapods.org`, `code.dlang.org`, `smithery.ai`, `pkg.go.dev`, `dev.to`)
+- Completed public listings: 14
+- Unique referring root domains: 14 (`github.io`, `sonatype.com`, `codeberg.org`, `gitea.com`, `gitbook.io`, `readthedocs.io`, `docs.rs`, `clojars.org`, `cocoapods.org`, `code.dlang.org`, `smithery.ai`, `pkg.go.dev`, `dev.to`, `r-universe.dev`)
 - Contextual backlink retrofit: approved project keywords only; no invented anchor variants
-- Pending / submitted: 3 new platform surfaces (`r-universe.dev`, `packagecontrol.io`, `glama.ai`)
+- Pending / submitted: 2 new platform surfaces (`packagecontrol.io`, `open-vsx.org`)
 - Blocked: 1 platform (`hackage.haskell.org`)
 - Skipped by owner: 1 platform (`lib.haxe.org`)
-- Rejected after qualification: 19 platforms
+- Rejected after qualification: 20 platforms
 
 ## Keyword-to-target map
 
@@ -32,7 +32,7 @@ Last audited: 2026-08-04
 
 ## Contextual retrofit audit
 
-The row-level status below records the primary contextual link for each of the 13 qualified public platforms. Where a registry also exposes an immutable or generic Homepage field, that metadata link is called out separately instead of being counted as a second contextual placement.
+The row-level status below records the primary contextual link for each of the 14 qualified public platforms. Where a registry also exposes an immutable or generic Homepage field, that metadata link is called out separately instead of being counted as a second contextual placement.
 
 | Platform | Public URL | Original anchor | New anchor | Original target | New target | Revised context | rel | Index status | Retrofit status |
 |---|---|---|---|---|---|---|---|---|---|
@@ -49,6 +49,7 @@ The row-level status below records the primary contextual link for each of the 1
 | Clojars | https://clojars.org/net.clojars.jiankn/nbmecalc | https://nbmecalc.com | unchanged naked URL | https://nbmecalc.com/ | unchanged | Generic Project URL accurately represents the multi-source Clojure package; registry copy is intentionally concise. | none | indexable | Retained intentionally |
 | DUB | https://code.dlang.org/packages/nbmecalc | NBMEcalc | AMBOSS to Step 2 CK converter | https://nbmecalc.com/ | https://nbmecalc.com/amboss-converter | D example now handles an AMBOSS Self-Assessment percentage for Step 2 planning. | none | indexable | Complete |
 | Smithery | https://smithery.ai/servers/jiankn/nbmecalc | https://nbmecalc.com/ | unchanged naked URL | https://nbmecalc.com/ | unchanged | Public listing exposes general MCP metadata rather than README prose; generic homepage remains the truthful target. | `noopener noreferrer` | indexable | Retained intentionally |
+| R-universe | https://jiankn.r-universe.dev/nbmecalc | NBMEcalc | NBME score conversion | https://nbmecalc.com/ | https://nbmecalc.com/nbme-score-conversion | R package README explains that the converter normalizes comprehensive NBME inputs before the hosted conversion workflow. | none | indexable | Complete; rendered DOM verified 2026-08-05 |
 
 ## Platforms
 
@@ -75,9 +76,10 @@ The row-level status below records the primary contextual link for each of the 1
 | DUB | code.dlang.org | https://code.dlang.org/packages/nbmecalc | D library | Homepage and README | none | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | DUB serves v1.0.2; README uses `AMBOSS to Step 2 CK converter` → `/amboss-converter`; verified 2026-08-04 |
 | Haxelib | lib.haxe.org | Not published | Haxe library | Project URL and README | none on representative page | HTTP 200; no `noindex`; no `X-Robots-Tag` | Skipped / credential unavailable | `jiankn` account exists but its password is unavailable; owner chose not to pursue the manual maintainer-assisted reset. Prepared v1.0.1 release and workflow are retained. |
 | Smithery | smithery.ai | https://smithery.ai/servers/jiankn/nbmecalc | Remote MCP server | Homepage metadata | `noopener noreferrer` | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete / retained | Public page renders generic MCP metadata, so the followable homepage URL is retained; source README now uses exact `USMLE score predictor` for compatible future surfaces. |
-| R-universe | r-universe.dev | https://jiankn.r-universe.dev/nbmecalc | R package | Rendered README | expected none based on qualified representative page | Representative page HTTP 200; no `noindex`; no `X-Robots-Tag` | Sync pending | Public source `jiankn/nbmecalc-r` v0.1.0 passed R check, source build, built-artifact install, and real invocation. Universe registry update is pushed; package page still returns 404 while the managed build syncs. Exact `NBME score conversion` → `/nbme-score-conversion`. |
+| R-universe | r-universe.dev | https://jiankn.r-universe.dev/nbmecalc | R package | Rendered README | none | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | Public source `jiankn/nbmecalc-r` v0.1.0 passed R check, source build, built-artifact install, and real invocation. Rendered DOM exposes exact `NBME score conversion` → `/nbme-score-conversion` as a followable link; verified 2026-08-05. |
 | Package Control | packagecontrol.io | https://packagecontrol.io/packages/NBMEcalc | Sublime Text package | Rendered README | none on qualified representative page | Representative page HTTP 200; no `noindex`; no `X-Robots-Tag` | PR open | Public source `jiankn/nbmecalc-sublime` v0.1.0 passed Python 3.8 and 3.13 CI. Upstream PR https://github.com/sublimehq/package_control_channel/pull/9510 is open and mergeable; directory review is pending. Exact `USMLE Step score calculator` → `/`. |
-| Glama | glama.ai | https://glama.ai/mcp/servers/jiankn/nbmecalc-mcp | Remote MCP directory | Rendered repository README | none on qualified representative page | Representative page HTTP 200; no `noindex`; canonical present | Review pending | Submission completed 2026-08-05. Source has green CI, `glama.json`, and exact `USMLE score predictor` → `/`; the route still renders stale SavePinner content until Glama review/import completes, so it is not counted. |
+| Glama | glama.ai | https://glama.ai/mcp/servers/jiankn/nbmecalc-mcp | Remote MCP directory | Rendered repository README | `nofollow ugc` | HTTP 200; no `noindex`; canonical present | Rejected / public nofollow | Submission is public and renders exact `USMLE score predictor` → `/`, but the final DOM adds `nofollow ugc`. It fails the campaign followability gate and is not counted; verified 2026-08-05. |
+| Open VSX | open-vsx.org | https://open-vsx.org/extension/jiankn/nbmecalc-score-tools | VS Code extension | Rendered README | none on qualified representative page | Representative page HTTP 200; no `noindex`; no `X-Robots-Tag` | Publish authentication pending | Public source `jiankn/nbmecalc-vscode` v0.1.0 passed five unit tests, clean lockfile install, local VSIX packaging, and Node 20/22 CI. Exact `USMLE Step score calculator` → `/`; waiting for the owner to sign the Open VSX Publisher Agreement and add `OVSX_PAT`. |
 | PyPI | pypi.org | Not created | Python package | Homepage / rendered README | `nofollow` | HTTP 200; no `noindex`; canonical present | Rejected | Failed followability gate after rendered-DOM audit |
 | cljdoc | cljdoc.org | Not created | Clojure documentation | Rendered README | `nofollow` | HTTP 200; no `noindex` | Rejected | Failed followability gate; Clojars itself remains qualified |
 | Hex / HexDocs | hex.pm / hexdocs.pm | Not created | Elixir package and docs | Homepage / README | `nofollow` | HTTP 200; no `noindex` | Rejected | Both package and generated documentation target links failed followability gate |
