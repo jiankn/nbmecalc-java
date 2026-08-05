@@ -8,10 +8,10 @@ Last audited: 2026-08-05
 - Completed public listings: 14
 - Unique referring root domains: 14 (`github.io`, `sonatype.com`, `codeberg.org`, `gitea.com`, `gitbook.io`, `readthedocs.io`, `docs.rs`, `clojars.org`, `cocoapods.org`, `code.dlang.org`, `smithery.ai`, `pkg.go.dev`, `dev.to`, `r-universe.dev`)
 - Contextual backlink retrofit: approved project keywords only; no invented anchor variants
-- Pending / submitted: 2 new platform surfaces (`packagecontrol.io`, `open-vsx.org`)
+- Pending / submitted: 3 new platform surfaces (`packagecontrol.io`, `open-vsx.org`, `plugins.jetbrains.com`)
 - Blocked: 1 platform (`hackage.haskell.org`)
 - Skipped by owner: 1 platform (`lib.haxe.org`)
-- Rejected after qualification: 20 platforms
+- Rejected after qualification: 23 platforms
 
 ## Keyword-to-target map
 
@@ -80,6 +80,7 @@ The row-level status below records the primary contextual link for each of the 1
 | Package Control | packagecontrol.io | https://packagecontrol.io/packages/NBMEcalc | Sublime Text package | Rendered README | none on qualified representative page | Representative page HTTP 200; no `noindex`; no `X-Robots-Tag` | PR open | Public source `jiankn/nbmecalc-sublime` v0.1.0 passed Python 3.8 and 3.13 CI. Upstream PR https://github.com/sublimehq/package_control_channel/pull/9510 is open and mergeable; directory review is pending. Exact `USMLE Step score calculator` → `/`. |
 | Glama | glama.ai | https://glama.ai/mcp/servers/jiankn/nbmecalc-mcp | Remote MCP directory | Rendered repository README | `nofollow ugc` | HTTP 200; no `noindex`; canonical present | Rejected / public nofollow | Submission is public and renders exact `USMLE score predictor` → `/`, but the final DOM adds `nofollow ugc`. It fails the campaign followability gate and is not counted; verified 2026-08-05. |
 | Open VSX | open-vsx.org | https://open-vsx.org/extension/jiankn/nbmecalc-score-tools | VS Code extension | Rendered README | none on qualified representative page | Representative page HTTP 200; no `noindex`; no `X-Robots-Tag` | Publish authentication pending | Public source `jiankn/nbmecalc-vscode` v0.1.0 passed five unit tests, clean lockfile install, local VSIX packaging, and Node 20/22 CI. Exact `USMLE Step score calculator` → `/`; waiting for the owner to sign the Open VSX Publisher Agreement and add `OVSX_PAT`. |
+| JetBrains Marketplace | plugins.jetbrains.com | Not published | IntelliJ Platform plugin | Plugin description | none on qualified representative page | Representative page HTTP 200; no `noindex`; canonical present | First upload authentication pending | Public source `jiankn/nbmecalc-jetbrains` v0.1.0 passed five unit tests, `buildPlugin`, and `verifyPluginProjectConfiguration` on CI. Exact `USMLE Step score calculator` → `/`; waiting for Marketplace login, Developer Agreement/Vendor profile, and the first manual upload. |
 | PyPI | pypi.org | Not created | Python package | Homepage / rendered README | `nofollow` | HTTP 200; no `noindex`; canonical present | Rejected | Failed followability gate after rendered-DOM audit |
 | cljdoc | cljdoc.org | Not created | Clojure documentation | Rendered README | `nofollow` | HTTP 200; no `noindex` | Rejected | Failed followability gate; Clojars itself remains qualified |
 | Hex / HexDocs | hex.pm / hexdocs.pm | Not created | Elixir package and docs | Homepage / README | `nofollow` | HTTP 200; no `noindex` | Rejected | Both package and generated documentation target links failed followability gate |
@@ -93,5 +94,8 @@ The row-level status below records the primary contextual link for each of the 1
 | Artifact Hub | artifacthub.io | Not created | Helm or CNCF artifact | Package source / README | `noopener noreferrer` on representative source link | HTTP 200; no `noindex` | Rejected / asset mismatch | Link gate passed, but NBMEcalc has no truthful deployable Kubernetes artifact; an empty chart would violate contribution-fit rules |
 | JuliaHub | juliahub.com | Not created | Julia package | Generated package page | `noopener noreferrer` on Source | HTTP 200; no `noindex`; canonical present | Rejected / keyword surface unverified | Only the platform-generated Source link was verified; no exact keyword-bearing contextual surface was established |
 | Conan Center | conan.io | Not created | C++ package | Homepage metadata | `noopener noreferrer` | HTTP 200; no `noindex`; canonical present | Rejected / keyword label unavailable | Followable target exists, but the visible anchor is the generated hostname rather than an approved project keyword |
+| Chocolatey Community | community.chocolatey.org | Not created | Windows package | Package description and Software Site | `nofollow` on custom description anchors; none on generated Software Site | HTTP 200; no `noindex`; no `X-Robots-Tag` | Rejected / exact keyword surface unavailable | Custom description anchor failed followability gate. The followable Software Site link uses the platform-generated label and cannot carry an approved project keyword. |
+| Snapcraft | snapcraft.io | Not created | Linux snap | Description and project metadata | none on generated project link | HTTP 200; no `noindex`; canonical present | Rejected / exact keyword surface unavailable | Followable project metadata is displayed as a generated hostname or naked URL; the current description surface does not preserve the approved exact keyword as link text. |
+| Raycast Store | raycast.com | Not created | Raycast extension | Rendered README | `nofollow noopener noreferrer` | HTTP 200; no `noindex`; canonical present | Rejected | Custom README anchor failed the final rendered-DOM followability gate. |
 
 Completed counts only include public pages where the final target link and page directives were directly audited. Multiple pages on the same root domain are deduplicated when counting referring domains.
