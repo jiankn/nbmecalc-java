@@ -36,15 +36,31 @@ jobs:
         run: |
           set -euo pipefail
           test -n "$CODEBERG_PAGES_TOKEN"
+          response="$RUNNER_TEMP/codeberg-api-response.json"
+          auth_scheme=''
+          for candidate in token Bearer; do
+            status="$(curl --silent --show-error --output "$response" --write-out '%{http_code}' \
+              --header "Authorization: $candidate $CODEBERG_PAGES_TOKEN" \
+              'https://codeberg.org/api/v1/user')"
+            if test "$status" = '200'; then
+              auth_scheme="$candidate"
+              break
+            fi
+          done
+          if test -z "$auth_scheme"; then
+            echo "Codeberg API authentication failed (HTTP $status)."
+            exit 1
+          fi
+          test "$(jq -r '.login' "$response")" = 'jiankn'
           api='https://codeberg.org/api/v1/repos/jiankn/nbmecalc-java/hooks'
           site='https://jiankn.codeberg.page/nbmecalc-java/'
           hooks="$(curl --fail-with-body --silent --show-error \
-            --header "Authorization: token $CODEBERG_PAGES_TOKEN" \
+            --header "Authorization: $auth_scheme $CODEBERG_PAGES_TOKEN" \
             "$api")"
           if ! jq -e --arg site "$site" '.[] | select(.config.url == $site)' >/dev/null <<<"$hooks"; then
             curl --fail-with-body --silent --show-error \
               --request POST \
-              --header "Authorization: token $CODEBERG_PAGES_TOKEN" \
+              --header "Authorization: $auth_scheme $CODEBERG_PAGES_TOKEN" \
               --header 'Content-Type: application/json' \
               --data "$(jq -cn --arg site "$site" '{active:true, branch_filter:"pages", config:{content_type:"json", http_method:"post", url:$site}, events:["push"], type:"gitea"}')" \
               "$api"
