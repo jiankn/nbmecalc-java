@@ -37,12 +37,15 @@ jobs:
           set -euo pipefail
           test -n "$CODEBERG_PAGES_TOKEN"
           response="$RUNNER_TEMP/codeberg-api-response.json"
+          repository='https://codeberg.org/api/v1/repos/jiankn/nbmecalc-java'
           auth_scheme=''
           for candidate in token Bearer; do
             status="$(curl --silent --show-error --output "$response" --write-out '%{http_code}' \
               --header "Authorization: $candidate $CODEBERG_PAGES_TOKEN" \
-              'https://codeberg.org/api/v1/user')"
-            if test "$status" = '200'; then
+              "$repository")"
+            if test "$status" = '200' && \
+              test "$(jq -r '.full_name' "$response")" = 'jiankn/nbmecalc-java' && \
+              test "$(jq -r '.permissions.push' "$response")" = 'true'; then
               auth_scheme="$candidate"
               break
             fi
@@ -51,7 +54,6 @@ jobs:
             echo "Codeberg API authentication failed (HTTP $status)."
             exit 1
           fi
-          test "$(jq -r '.login' "$response")" = 'jiankn'
           api='https://codeberg.org/api/v1/repos/jiankn/nbmecalc-java/hooks'
           site='https://jiankn.codeberg.page/nbmecalc-java/'
           hooks="$(curl --fail-with-body --silent --show-error \
