@@ -1,0 +1,72 @@
+name: Deploy Codeberg Pages guide
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        description: Type deploy-codeberg-pages to publish the reviewed guide
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    if: ${{ inputs.confirmation == 'deploy-codeberg-pages' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: pages
+
+      - name: Verify the reviewed static guide
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f index.html
+          grep -F '<meta name="robots" content="index,follow">' index.html
+          grep -F '<a href="https://nbmecalc.com/">USMLE Step score calculator</a>' index.html
+          ! grep -Eqi 'rel="[^"]*(nofollow|ugc|sponsored)' index.html
+
+      - name: Create the Pages delivery hook when absent
+        shell: bash
+        env:
+          CODEBERG_PAGES_TOKEN: ${{ secrets.CODEBERG_PAGES_TOKEN }}
+        run: |
+          set -euo pipefail
+          test -n "$CODEBERG_PAGES_TOKEN"
+          api='https://codeberg.org/api/v1/repos/jiankn/nbmecalc-java/hooks'
+          site='https://jiankn.codeberg.page/nbmecalc-java/'
+          hooks="$(curl --fail-with-body --silent --show-error \
+            --header "Authorization: token $CODEBERG_PAGES_TOKEN" \
+            "$api")"
+          if ! jq -e --arg site "$site" '.[] | select(.config.url == $site)' >/dev/null <<<"$hooks"; then
+            curl --fail-with-body --silent --show-error \
+              --request POST \
+              --header "Authorization: token $CODEBERG_PAGES_TOKEN" \
+              --header 'Content-Type: application/json' \
+              --data "$(jq -cn --arg site "$site" '{active:true, branch_filter:"pages", config:{content_type:"json", http_method:"post", url:$site}, events:["push"], type:"gitea"}')" \
+              "$api"
+          fi
+
+      - name: Publish the pages branch to Codeberg
+        shell: bash
+        env:
+          CODEBERG_PAGES_TOKEN: ${{ secrets.CODEBERG_PAGES_TOKEN }}
+        run: |
+          set -euo pipefail
+          test -n "$CODEBERG_PAGES_TOKEN"
+          askpass="$RUNNER_TEMP/codeberg-askpass.sh"
+          cat > "$askpass" <<'EOF'
+          #!/bin/sh
+          case "$1" in
+            Username*) printf '%s\n' 'jiankn' ;;
+            Password*) printf '%s\n' "$CODEBERG_PAGES_TOKEN" ;;
+            *) exit 1 ;;
+          esac
+          EOF
+          chmod 700 "$askpass"
+          GIT_ASKPASS="$askpass" GIT_TERMINAL_PROMPT=0 \
+            git push https://jiankn@codeberg.org/jiankn/nbmecalc-java.git HEAD:refs/heads/pages
+          rm -f "$askpass"

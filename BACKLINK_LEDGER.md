@@ -1,6 +1,6 @@
 # NBMEcalc developer backlink ledger
 
-Last audited: 2026-08-05
+Last audited: 2026-08-07
 
 ## Summary
 
@@ -8,10 +8,11 @@ Last audited: 2026-08-05
 - Completed public listings: 14
 - Unique referring root domains: 14 (`github.io`, `sonatype.com`, `codeberg.org`, `gitea.com`, `gitbook.io`, `readthedocs.io`, `docs.rs`, `clojars.org`, `cocoapods.org`, `code.dlang.org`, `smithery.ai`, `pkg.go.dev`, `dev.to`, `r-universe.dev`)
 - Contextual backlink retrofit: approved project keywords only; no invented anchor variants
-- Pending / submitted: 4 new platform surfaces (`packagecontrol.io`, `open-vsx.org`, `plugins.jetbrains.com`, `plugins.netbeans.apache.org`)
+- Pending / submitted: 5 platform surfaces (`packagecontrol.io`, `open-vsx.org`, `plugins.jetbrains.com`, `plugins.netbeans.apache.org`, `codeberg.page`)
 - Blocked: 1 platform (`hackage.haskell.org`)
 - Skipped by owner: 1 platform (`lib.haxe.org`)
-- Rejected after qualification: 24 platforms
+- Deferred because hosting requires payment: 1 platform (`sr.ht`)
+- Rejected after qualification: 29 platforms
 
 ## Keyword-to-target map
 
@@ -66,6 +67,7 @@ The row-level status below records the primary contextual link for each of the 1
 | VS Marketplace | marketplace.visualstudio.com | Not created | VS Code extension | README / repository links | `nofollow noopener noreferrer` | HTTP 200; no `noindex`; no `X-Robots-Tag` | Rejected | Failed followability gate |
 | Libraries.io | libraries.io | Not created | Registry mirror | Homepage / README | `nofollow` | HTTP 200; no `noindex`; no `X-Robots-Tag` | Rejected | Failed followability gate |
 | Codeberg | codeberg.org | https://codeberg.org/jiankn/nbmecalc-java | Java library mirror | Repository Website field and README | none on Website; `nofollow` on README | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | Followable Website field remains the homepage; contextual README now uses `free NBME score calculator`; verified 2026-08-04 |
+| Codeberg Pages | codeberg.page | Planned: https://jiankn.codeberg.page/nbmecalc-java/ | NetBeans integration guide | Static documentation prose | none on qualified representative page | Representative page HTTP 200; no `noindex`; ordinary external anchors retain no `nofollow` | Deployment credential pending | Prepared a standalone local-install and worksheet-validation guide with exact `USMLE Step score calculator` → `/`; Pages deployment needs a Codeberg write token in a GitHub repository secret. |
 | Gitea.com | gitea.com | https://gitea.com/jiankn/nbmecalc-java | Java library mirror | Repository Website field and README | none on Website; `nofollow` on README | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | Followable Website field remains the homepage; contextual README now uses `free NBME score calculator`; verified 2026-08-04 |
 | GitBook | gitbook.io | https://savepinner.gitbook.io/nbmecalc-developer-documentation | Developer guide | Documentation prose | none | HTTP 200; `index, follow`; canonical present | Complete | Exact `USMLE score predictor` → `/` is followable; verified 2026-08-04. |
 | DEV Community | dev.to | https://dev.to/jiankn/building-an-uncertainty-aware-practice-exam-score-calculator-in-java-15og | Technical tutorial | Article prose | `noopener noreferrer` | HTTP 200; no `noindex`; self-canonical | Complete | Exact `USMLE score predictor` → `/` is public and followable; verified 2026-08-05. |
@@ -81,8 +83,14 @@ The row-level status below records the primary contextual link for each of the 1
 | Glama | glama.ai | https://glama.ai/mcp/servers/jiankn/nbmecalc-mcp | Remote MCP directory | Rendered repository README | `nofollow ugc` | HTTP 200; no `noindex`; canonical present | Rejected / public nofollow | Submission is public and renders exact `USMLE score predictor` → `/`, but the final DOM adds `nofollow ugc`. It fails the campaign followability gate and is not counted; verified 2026-08-05. |
 | Open VSX | open-vsx.org | https://open-vsx.org/extension/jiankn/nbmecalc-score-tools | VS Code extension | Rendered README | none on qualified representative page | Representative page HTTP 200; no `noindex`; no `X-Robots-Tag` | Publish authentication pending | Public source `jiankn/nbmecalc-vscode` v0.1.0 passed five unit tests, clean lockfile install, local VSIX packaging, and Node 20/22 CI. Exact `USMLE Step score calculator` → `/`; waiting for the owner to sign the Open VSX Publisher Agreement and add `OVSX_PAT`. |
 | JetBrains Marketplace | plugins.jetbrains.com | Not published | IntelliJ Platform plugin | Plugin description | none on qualified representative page | Representative page HTTP 200; no `noindex`; canonical present | First upload authentication pending | Public source `jiankn/nbmecalc-jetbrains` v0.1.0 passed five unit tests, `buildPlugin`, and `verifyPluginProjectConfiguration` on CI. Exact `USMLE Step score calculator` → `/`; waiting for Marketplace login, Developer Agreement/Vendor profile, and the first manual upload. |
-| NetBeans Plugin Portal | plugins.netbeans.apache.org | Not published | Apache NetBeans module | Plugin description | none on qualified representative page | Representative page HTTP 200; no `noindex`; canonical present | Maven Central publication secrets pending | GitHub login is complete. Public source `jiankn/nbmecalc-netbeans` v0.1.0 and release tag passed five unit tests, NBM packaging, source/Javadoc packaging, local artifact installation, and GitHub Actions under `io.github.jiankn:nbmecalc-netbeans:0.1.0`. Exact `USMLE Step score calculator` → `/`; the portal imports from Maven Central, so publication waits for the four existing Central/GPG secrets to be added to this repository. |
+| NetBeans Plugin Portal | plugins.netbeans.apache.org | Not public yet | Apache NetBeans module | Plugin description | pending final-page audit | Public listing pending approval | Submitted / waiting approval | `NBMEcalc Score Tools for NetBeans` v0.1.0 was registered on 2026-08-07 under `io.github.jiankn:nbmecalc-netbeans`; Maven Central artifacts and signatures return HTTP 200. The portal's public detail page, index directives, exact `USMLE Step score calculator` → `/`, and rel tokens remain to be verified after approval. |
 | PyPI | pypi.org | Not created | Python package | Homepage / rendered README | `nofollow` | HTTP 200; no `noindex`; canonical present | Rejected | Failed followability gate after rendered-DOM audit |
+| npm | npmjs.com | Not created | JavaScript package | Rendered README / Homepage | `nofollow` | HTTP 200; no `noindex` observed | Rejected | Representative package page rendered every external README and Homepage link with `nofollow`; exact keyword-bearing link cannot qualify. |
+| crates.io | crates.io | Not created | Rust crate registry page | Rendered README / package homepage | `nofollow noopener noreferrer` on README; generated domain label only on homepage | HTTP 200; no `noindex` observed | Rejected | README links failed followability; the only ordinary homepage link is a system-generated hostname and cannot carry an approved anchor. |
+| mcp.so | mcp.so | Not created | MCP server directory | Listing metadata | repository link only | HTTP 200; no `noindex` observed | Rejected | Representative detail page renders a GitHub repository link and generated server text, but no legitimate target field or keyword-bearing contextual link. |
+| mcpservers.org | mcpservers.org | Not created | MCP directory | Listing link | free tier does not provide dofollow link | HTTP 200; no `noindex` observed | Rejected | The platform explicitly reserves a dofollow link for its paid review tier; the free listing fails the campaign followability gate. |
+| Hashnode | hashnode.dev | Not created | Developer tutorial | Article prose | `noopener noreferrer nofollow ugc` | HTTP 200; canonical present; no `noindex` observed | Rejected | Representative Java article added `nofollow ugc` to external body links. |
+| SourceHut | sr.ht | Not created | Source repository / documentation | Repository README | untested | Public pages available | Deferred / paid hosting | SourceHut currently requires a paid maintainer account to create repositories; no spend was authorized. |
 | cljdoc | cljdoc.org | Not created | Clojure documentation | Rendered README | `nofollow` | HTTP 200; no `noindex` | Rejected | Failed followability gate; Clojars itself remains qualified |
 | Hex / HexDocs | hex.pm / hexdocs.pm | Not created | Elixir package and docs | Homepage / README | `nofollow` | HTTP 200; no `noindex` | Rejected | Both package and generated documentation target links failed followability gate |
 | pub.dev | pub.dev | Not created | Dart package | Homepage / README | `ugc` | HTTP 200; `noindex`; canonical present | Rejected | Failed both indexability and followability gates |
