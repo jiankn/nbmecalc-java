@@ -1,14 +1,14 @@
 # NBMEcalc developer backlink ledger
 
-Last audited: 2026-08-07
+Last audited: 2026-08-08
 
 ## Summary
 
 - Canonical target: https://nbmecalc.com
-- Completed public listings: 14
-- Unique referring root domains: 14 (`github.io`, `sonatype.com`, `codeberg.org`, `gitea.com`, `gitbook.io`, `readthedocs.io`, `docs.rs`, `clojars.org`, `cocoapods.org`, `code.dlang.org`, `smithery.ai`, `pkg.go.dev`, `dev.to`, `r-universe.dev`)
+- Completed public listings: 15
+- Unique referring root domains: 15 (`github.io`, `sonatype.com`, `codeberg.org`, `codeberg.page`, `gitea.com`, `gitbook.io`, `readthedocs.io`, `docs.rs`, `clojars.org`, `cocoapods.org`, `code.dlang.org`, `smithery.ai`, `pkg.go.dev`, `dev.to`, `r-universe.dev`)
 - Contextual backlink retrofit: approved project keywords only; no invented anchor variants
-- Pending / submitted: 5 platform surfaces (`packagecontrol.io`, `open-vsx.org`, `plugins.jetbrains.com`, `plugins.netbeans.apache.org`, `codeberg.page`)
+- Pending / submitted: 4 platform surfaces (`packagecontrol.io`, `open-vsx.org`, `plugins.jetbrains.com`, `plugins.netbeans.apache.org`)
 - Blocked: 1 platform (`hackage.haskell.org`)
 - Skipped by owner: 1 platform (`lib.haxe.org`)
 - Deferred because hosting requires payment: 1 platform (`sr.ht`)
@@ -33,7 +33,7 @@ Last audited: 2026-08-07
 
 ## Contextual retrofit audit
 
-The row-level status below records the primary contextual link for each of the 14 qualified public platforms. Where a registry also exposes an immutable or generic Homepage field, that metadata link is called out separately instead of being counted as a second contextual placement.
+The row-level status below records the primary contextual link for each of the 15 qualified public platforms. Where a registry also exposes an immutable or generic Homepage field, that metadata link is called out separately instead of being counted as a second contextual placement.
 
 | Platform | Public URL | Original anchor | New anchor | Original target | New target | Revised context | rel | Index status | Retrofit status |
 |---|---|---|---|---|---|---|---|---|---|
@@ -42,6 +42,7 @@ The row-level status below records the primary contextual link for each of the 1
 | Read the Docs | https://nbmecalc-developer-docs.readthedocs.io/ | NBMEcalc | USMLE score predictor | https://nbmecalc.com/ | https://nbmecalc.com/ | Developer documentation for the libraries behind the predictor; worked example separately links `Step 2 CK score calculator` to `/step-2-predictor`. | none | indexable | Complete; verified 2026-08-04 |
 | CocoaPods | https://cocoapods.org/pods/NBMEcalc | NBMEcalc | UWSA 2 to Step 2 CK predictor | https://nbmecalc.com/ | https://nbmecalc.com/uwsa-2-to-step-2 | Swift example now uses a UWSA 2 input; the followable generic Homepage field remains `/`. | `nofollow` on README; none on Homepage | indexable | v1.0.5 live; README cache pending |
 | Codeberg | https://codeberg.org/jiankn/nbmecalc-java | NBMEcalc | free NBME score calculator | https://nbmecalc.com/ | https://nbmecalc.com/ | README explains the library as the reusable baseline behind a multi-source calculator; followable Website metadata remains the naked homepage URL. | `nofollow` on README; none on Website | indexable | Complete |
+| Codeberg Pages | https://jiankn.codeberg.page/nbmecalc-java/ | none | USMLE Step score calculator | none | https://nbmecalc.com/ | Static NetBeans guide explains how to validate local worksheet data before opening the hosted calculator for a multi-assessment estimate. | none | HTTP 200; `index,follow`; no `X-Robots-Tag`; canonical present | Complete; verified 2026-08-08 |
 | Gitea.com | https://gitea.com/jiankn/nbmecalc-java | NBMEcalc | free NBME score calculator | https://nbmecalc.com/ | https://nbmecalc.com/ | README explains the library as the reusable baseline behind a multi-source calculator; followable Website metadata remains the naked homepage URL. | `nofollow` on README; none on Website | indexable | Complete |
 | GitBook | https://savepinner.gitbook.io/nbmecalc-developer-documentation | NBMEcalc | USMLE score predictor | https://nbmecalc.com/ | https://nbmecalc.com/ | Developer guide for the libraries behind the predictor; worked example separately links `Step 2 CK score calculator` to `/step-2-predictor`. | none | `index, follow` | Complete; verified 2026-08-04 |
 | DEV Community | https://dev.to/jiankn/building-an-uncertainty-aware-practice-exam-score-calculator-in-java-15og | NBMEcalc | USMLE score predictor | https://nbmecalc.com/ | https://nbmecalc.com/ | Java tutorial identifies the package as maintained by the team behind the predictor; methodology link remains descriptive supporting context. | `noopener noreferrer` | indexable | Complete; verified 2026-08-05 |
@@ -67,7 +68,7 @@ The row-level status below records the primary contextual link for each of the 1
 | VS Marketplace | marketplace.visualstudio.com | Not created | VS Code extension | README / repository links | `nofollow noopener noreferrer` | HTTP 200; no `noindex`; no `X-Robots-Tag` | Rejected | Failed followability gate |
 | Libraries.io | libraries.io | Not created | Registry mirror | Homepage / README | `nofollow` | HTTP 200; no `noindex`; no `X-Robots-Tag` | Rejected | Failed followability gate |
 | Codeberg | codeberg.org | https://codeberg.org/jiankn/nbmecalc-java | Java library mirror | Repository Website field and README | none on Website; `nofollow` on README | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | Followable Website field remains the homepage; contextual README now uses `free NBME score calculator`; verified 2026-08-04 |
-| Codeberg Pages | codeberg.page | Planned: https://jiankn.codeberg.page/nbmecalc-java/ | NetBeans integration guide | Static documentation prose | none on qualified representative page | Representative page HTTP 200; no `noindex`; ordinary external anchors retain no `nofollow` | Deployment credential pending | Prepared a standalone local-install and worksheet-validation guide with exact `USMLE Step score calculator` → `/`; Pages deployment needs a Codeberg write token in a GitHub repository secret. |
+| Codeberg Pages | codeberg.page | https://jiankn.codeberg.page/nbmecalc-java/ | NetBeans integration guide | Static documentation prose | none | HTTP 200; meta `index,follow`; no `X-Robots-Tag`; self-canonical present | Complete | Exact `USMLE Step score calculator` → `https://nbmecalc.com/` is a followable ordinary anchor in a public NetBeans worksheet-validation guide; final URL audit verified 2026-08-08. |
 | Gitea.com | gitea.com | https://gitea.com/jiankn/nbmecalc-java | Java library mirror | Repository Website field and README | none on Website; `nofollow` on README | HTTP 200; no `noindex`; no `X-Robots-Tag` | Complete | Followable Website field remains the homepage; contextual README now uses `free NBME score calculator`; verified 2026-08-04 |
 | GitBook | gitbook.io | https://savepinner.gitbook.io/nbmecalc-developer-documentation | Developer guide | Documentation prose | none | HTTP 200; `index, follow`; canonical present | Complete | Exact `USMLE score predictor` → `/` is followable; verified 2026-08-04. |
 | DEV Community | dev.to | https://dev.to/jiankn/building-an-uncertainty-aware-practice-exam-score-calculator-in-java-15og | Technical tutorial | Article prose | `noopener noreferrer` | HTTP 200; no `noindex`; self-canonical | Complete | Exact `USMLE score predictor` → `/` is public and followable; verified 2026-08-05. |
