@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index,follow">
+    <meta name="description" content="A local Apache NetBeans worksheet workflow for reviewing practice-exam score estimates.">
+    <link rel="canonical" href="https://jiankn.codeberg.page/nbmecalc-java/">
+    <title>NBMEcalc Score Tools for NetBeans — Local worksheet guide</title>
+    <style>
+      :root { color-scheme: light dark; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.6; }
+      body { margin: 0; background: #f8fafc; color: #172033; }
+      main { box-sizing: border-box; max-width: 840px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+      h1, h2 { line-height: 1.2; color: #102a43; }
+      h1 { font-size: clamp(2rem, 5vw, 3.25rem); margin: 0 0 .75rem; }
+      h2 { margin-top: 2.5rem; }
+      .lede { font-size: 1.18rem; max-width: 68ch; }
+      .note { border-left: 4px solid #277da1; background: #eaf4f8; padding: 1rem 1.15rem; border-radius: 0 .5rem .5rem 0; }
+      code, pre { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+      pre { overflow-x: auto; padding: 1rem; border-radius: .5rem; background: #172033; color: #f8fafc; }
+      a { color: #075985; }
+      footer { border-top: 1px solid #cbd5e1; margin-top: 3rem; padding-top: 1.2rem; font-size: .94rem; }
+      @media (prefers-color-scheme: dark) {
+        body { background: #101827; color: #e5edf6; }
+        h1, h2 { color: #f0f7ff; }
+        .note { background: #143244; }
+        a { color: #7dd3fc; }
+        footer { border-color: #334155; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>NBMEcalc Score Tools for NetBeans</h1>
+        <p class="lede">A small local workflow for creating, validating, and copying structured practice-exam score worksheets while working in Apache NetBeans.</p>
+      </header>
+
+      <p class="note">The extension is an educational worksheet helper. It does not provide medical advice, official score reports, or a replacement for an examination authority.</p>
+
+      <h2>Why keep the worksheet in the IDE?</h2>
+      <p>Study notes and small analysis projects often need the same fields repeated: the assessment source, correct and total items, an estimate, and its confidence bounds. The plugin keeps that structured record on the local clipboard, validates the basic constraints, and produces a concise summary that can be pasted into notes or an issue discussion.</p>
+      <p>When an interactive estimate is the better next step, use the <a href="https://nbmecalc.com/">USMLE Step score calculator</a>. The browser workflow and this NetBeans helper have intentionally different responsibilities: the site is interactive, while the plugin never sends worksheet data over the network.</p>
+
+      <h2>Install the verified NBM bundle</h2>
+      <ol>
+        <li>Install JDK 17 or newer and Apache NetBeans 22 or newer.</li>
+        <li>Download <a href="https://repo1.maven.org/maven2/io/github/jiankn/nbmecalc-netbeans/0.1.0/nbmecalc-netbeans-0.1.0.nbm">nbmecalc-netbeans-0.1.0.nbm from Maven Central</a>.</li>
+        <li>In NetBeans, open <strong>Tools → Plugins → Downloaded</strong>, choose <strong>Add Plugins</strong>, select the downloaded <code>.nbm</code> file, and restart when prompted.</li>
+      </ol>
+      <p>The published coordinate is <code>io.github.jiankn:nbmecalc-netbeans:0.1.0</code>. The source, Javadoc, and signatures are published alongside the bundle for reproducible review.</p>
+
+      <h2>Create and validate a worksheet</h2>
+      <p>Open <strong>Tools → NBMEcalc → Copy score worksheet</strong>, then adjust the copied JSON to match the practice assessment you are reviewing. Select <strong>Validate worksheet from clipboard</strong> to check required fields, valid item ranges, and the ordering of the confidence interval.</p>
+      <pre>{
+  "source": "NBME 10",
+  "correct": 160,
+  "total": 200,
+  "estimatedScore": 245,
+  "confidenceLow": 238,
+  "confidenceHigh": 252
+}</pre>
+      <p>A valid record requires all six fields. <code>correct</code> must be between zero and <code>total</code>; <code>confidenceLow</code> must not exceed <code>estimatedScore</code>; and <code>estimatedScore</code> must not exceed <code>confidenceHigh</code>.</p>
+
+      <h2>Use the result without exporting personal data</h2>
+      <p><strong>Copy validated summary</strong> creates a short text result for a local study note. <strong>Open calculator</strong> is an explicit browser action, so nothing is opened or transmitted merely by creating or validating a worksheet.</p>
+
+      <footer>
+        <p>Source and issue tracking: <a href="https://github.com/jiankn/nbmecalc-netbeans">jiankn/nbmecalc-netbeans</a>. Licensed under Apache-2.0.</p>
+      </footer>
+    </main>
+  </body>
+</html>
